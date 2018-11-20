@@ -1,0 +1,312 @@
+$border-color: lightgreen;
+$alt-border: #212121;
+$background-color: black;
+
+.App { 
+  height: 100%;
+  width: 100%;
+  background: $background-color;
+  overflow: hidden;
+  .Head, .Left, .Right, .Foot, .Action {
+    border: 2px solid $border-color;
+    border-radius: 4px;
+    background: $background-color;
+    position: absolute;
+    color: $border-color;
+    transition: 0.7s all;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    h1, h2 {
+      margin: auto;
+      width: 100%;
+    }
+  }
+  .Head:hover, 
+  .Left:hover, 
+  .Right:hover, 
+  .Foot:hover, 
+  .Action:hover {
+    color: white;
+    transition: 0.7s all;
+  }
+  .Head {
+    top: -2px;
+    height: 36px;
+    width: calc(100% - 38px);
+    overflow: hidden;
+    img {
+      width: 40px;
+      height: 34px;
+      filter: invert(1);
+    }
+    h5 {
+      margin: 0;
+      height: 36px;
+      align-items: center;
+      color: white;
+      font-size: 28px;
+      border-bottom: 1px solid $alt-border;
+      width: calc(100% - 10px);
+      transition: 0.7s all;
+    }
+    #tricksCont {
+      //border: 1px solid blue;
+      width: 100%;
+      height: calc(260px);
+      display: flex;
+      overflow: scroll;
+      margin: 0px auto 0 auto;
+      transition: 0.7s all;
+      .trick {
+        border: 2px solid lightgreen;
+        border-radius: 4px;
+        min-width: 350px;
+        height: 90%;
+        margin: 10px;
+      }
+    }
+  }
+  .Left {
+    left: -2px;
+    top: 38px;
+    height: calc(100% - 74px);
+    width: 36px;
+    overflow: hidden;
+    #leftCont {
+      //border: 2px solid yellow;
+      width: 100%;
+      height: 100%;
+      h2 {
+        width: 300px;
+        height: 50px;
+        transition: 0.7s all;
+        padding-top: 1px;
+        pointer-events:none;
+        color: white;
+        border-bottom: 1px solid $alt-border;
+        mix-blend-mode: difference;
+      }
+      #leftList {
+        //border: 1px solid blue;
+        height: calc(100% - 55px);
+        width: 98%;
+        margin: auto;
+        transition: 0.7s all;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: scroll;
+        .leftO {
+          border: 2px solid $border-color;
+          height: 150px;
+          width: 100%;
+          border-radius: 4px;
+          margin: 5px auto;
+          display: flex;
+          flex-wrap: wrap;
+          h2 {
+            height: 0px;
+            width: 100%;
+          }
+          .oCont {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            .shapeToggle {
+              width: 45%;
+              margin: auto;
+              border: 1px solid gray;
+              height:25px;
+              display: flex;
+              h5 {
+                width: calc(100% - 50px)
+              }
+              .switch {
+                border: 1px solid white;
+                height: 20px;
+                color: white;
+                width: 40px;
+                .toggle {
+                  background: gray;
+                  border: 2px solid white;
+                  border-radius: 50%;
+                  height: 20px;
+                  width: 20px;
+                  margin: auto;
+                  pointer-events:none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .Right {
+    right: -2px;
+    height: calc(100% - 36px);
+    width: 36px;
+    overflow: hidden;
+    h2 {
+      width: 300px;
+      height: 50px;
+      transition: 0.7s all;
+      padding-top: 1px;
+      pointer-events:none;
+      color: white;
+      border-bottom: 1px solid $alt-border;
+      mix-blend-mode: difference;
+    }
+  }
+  .Foot {
+    bottom: -4px;
+    height: 36px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    h2 {
+      border-bottom: 1px solid white;
+      width: 90%;
+      height: 34px;
+      margin: 0 auto;
+      pointer-events:none;
+      mix-blend-mode: difference;
+      color: white;
+    }
+  }
+  .Action {
+    left: 39px;
+    top: 38px;
+    width: calc(100% - 76px);
+    height: calc(100% - 74px); 
+    overflow: scroll; 
+    #hero {
+      //border: 1px solid red;
+      width: 100%;
+      height: 100%;
+      align-content: center;
+      margin: 0;
+      color: white;
+      display: flex;
+      h1, h2, h3, h4, h5 {
+        border-bottom: 1px solid blue;
+        width: 100%;
+        height: 50px;
+        margin: auto;
+      }
+      #boxDiv {
+        border: 2px solid white;
+        border-radius: 5px;
+        height: 90%;
+        width: 30%;
+        height: 600px;
+        width: 600px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        .Drop {
+          border: 2px dashed blue;
+          width: 100%;
+          #csvReader {
+            width: 100%;
+            border: 2px dashed gray;
+          }
+        }
+        .Plot {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          .squarea {
+            margin: auto;
+            transition: 0.5s all;
+            .corrInfo {
+              opacity: 0;
+              pointer-events: none;
+              transition: 0.5s all;
+              background: black;
+            }
+          }
+          .squarea:hover {
+            border: 2px solid white;
+            transition: 0.5s all;
+            .corrInfo {
+              opacity: 1;
+              transition: 0.5s all;
+              width: 300px;
+              height: 200px;
+              border: 2px solid lightgreen;
+              background: black;
+              pointer-events:none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .Foot #hoverBox-Foot,
+  .Left #hoverBox-Left,
+  .Right #hoverBox-Right {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: 0.7s all;
+    padding: 2px;
+    //border: 1px dashed violet;
+  }
+  .Left #hoverBox-Left,
+  .Right #hoverBox-Right {
+    width: 36px;
+  }
+  .Left #hoverBox-Left {
+    right: 0px;
+  }
+  .Foot #hoverBox-Foot {
+    height: 36px;
+  }
+  .Left #hoverBox-Left:hover {
+    -webkit-box-shadow: inset -10px 0px 20px -5px rgba(0,255,26,0.88); 
+    box-shadow: inset -10px 0px 20px -5px rgba(0,255,26,0.88);
+    transition: 0.7s all;
+  }
+  .Foot #hoverBox-Foot:hover {
+    -webkit-box-shadow: inset 20px -5px -10px 0px rgba(0,255,26,0.88); 
+    box-shadow: inset 0px 10px 20px -5px rgba(0,255,26,0.88);
+    transition: 0.7s all;
+  }
+  .Right #hoverBox-Right:hover {
+    -webkit-box-shadow: inset 10px 0px 20px -5px rgba(0,255,26,0.88); 
+    box-shadow: inset 10px 0px 20px -5px rgba(0,255,26,0.88);
+    transition: 0.7s all;
+  }
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 0px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: none; 
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lightgreen; 
+  border: 2px solid black;
+  border-radius: 4px;
+  opacity: 0.7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: white; 
+}
